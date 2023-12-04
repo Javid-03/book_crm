@@ -1,0 +1,8 @@
+modelname.objects.create(attributename={value});
+
+modelname.objects.filter(id=id).update(field_name=field_value)
+
+s=Employee.objects.all()
+s
+
+

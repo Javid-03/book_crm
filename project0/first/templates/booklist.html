@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book list</title>
+</head>
+<body>
+    
+    {% comment %} {%for book in qs%}
+    <br>
+    {{book.title}}
+    {{book.author}}
+    {{book.p_year}}
+    {{book.genre}}
+    {%endfor%} {% endcomment %}
+    <h2 style="text-align: center;">Book List</h2>
+    <table border="true" style="background-color: bisque; text-align: center;margin: auto;">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Published on</th>
+            <th>Genre</th>
+        </tr>
+        {%for book in qs%}
+        <tr>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.p_year}}</td>
+            <td>{{book.genre}}</td>
+            <td>
+                <a href="{% url 'book-det' book.id %}">View</a>
+                <a href="{% url 'book-del' book.id %}">Delete</a>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>
